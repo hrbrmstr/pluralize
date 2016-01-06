@@ -1,13 +1,21 @@
 ---
-title: "README"
-author: "Bob Rudis"
-date: January 06, 2016
 output:
+  html_document:
+    keep_md: true
   md_document:
     variant: markdown_github
 ---
+<!-- README.md is generated from README.Rmd. Please edit that file -->
 
-pluralize : Pluralize and Singularize Any Word
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+<div style="padding-bottom:20px">Made with <img src="v8.png"/></div>
+`pluralize` : Pluralize and Singularize Any Word
 
 Based on the [pluralize.js](https://github.com/blakeembrey/pluralize) javascript library by Blake Embrey.
 
@@ -81,3 +89,6 @@ date()
 test_dir("tests/")
 ```
 
+### Code of Conduct
+
+Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.

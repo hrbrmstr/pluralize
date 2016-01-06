@@ -2,3 +2,7 @@
 ^\.Rproj\.user$
 ^\.travis\.yml$
 ^.*md$
+^README\.md$
+^v8\.png$
+^README\.html$
+^CONDUCT\.md$
