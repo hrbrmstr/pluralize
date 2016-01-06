@@ -1,0 +1,73 @@
+---
+title: "README"
+author: "Bob Rudis"
+date: January 06, 2016
+output:
+  md_document:
+    variant: markdown_github
+---
+
+pluralize : Pluralize and Singularize Any Word
+
+Based on the [pluralize.js](https://github.com/blakeembrey/pluralize) javascript library by Blake Embrey.
+
+The following functions are implemented:
+
+- `add_irregular_rule` :	Add a custom rule for making "deregularizing" a word
+- `add_plural_rule` :	Add a custom rule for making a word plural
+- `add_singular_rule` :	Add a custom rule for making a word singular
+- `add_uncountable_rule` :	Make a word "uncountable"
+- `pluralize` :	Pluralize and Singularize Any Word
+- `singularize` :	Singularize a word
+
+### News
+
+- Version 0.1.0 released
+
+### Installation
+
+```{r eval=FALSE}
+devtools::install_github("hrbrmstr/pluralize")
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, error=FALSE}
+options(width=120)
+```
+
+### Usage
+
+```{r}
+library(pluralize)
+
+# current verison
+packageVersion("pluralize")
+
+pluralize('test')
+singularize('test')
+pluralize('test', 5)
+pluralize('test', 5, TRUE)
+pluralize('regex')
+add_plural_rule("gex", "gexii")
+pluralize('regex')
+singularize('singles')
+add_singular_rule("singles", "singular")
+singularize('singles')
+pluralize("irregular")
+add_irregular_rule("irregular", "regular")
+pluralize("irregular")
+pluralize("paper")
+add_uncountable_rule("paper")
+pluralize("paper")
+```
+
+### Test Results
+
+```{r}
+library(pluralize)
+library(testthat)
+
+date()
+
+test_dir("tests/")
+```
+
