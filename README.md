@@ -3,10 +3,11 @@
 
 <div style="padding-bottom:20px">Made with <img src="v8.png"/></div>
 
-<br/>
 `pluralize` : Pluralize and Singularize Any Word
 
 Based on the [pluralize.js](https://github.com/blakeembrey/pluralize) javascript library by Blake Embrey.
+
+Functions to create plural, singular and regular forms of English words along with tools to augment the built-in rules to fit specialzied needs.
 
 The following functions are implemented:
 
@@ -98,7 +99,7 @@ library(pluralize)
 library(testthat)
 
 date()
-#> [1] "Wed Jan  6 18:29:34 2016"
+#> [1] "Wed Jan  6 18:32:24 2016"
 
 test_dir("tests/")
 #> testthat results ========================================================================================================
