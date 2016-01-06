@@ -2,8 +2,8 @@
 
 
 <div style="padding-bottom:20px">Made with <img src="v8.png"/></div>
-
-`pluralize` : Pluralize and Singularize Any Word
+<br/>
+`pluralize` : Pluralize and Singularize Any (English) Word
 
 Based on the [pluralize.js](https://github.com/blakeembrey/pluralize) javascript library by Blake Embrey.
 
@@ -99,7 +99,7 @@ library(pluralize)
 library(testthat)
 
 date()
-#> [1] "Wed Jan  6 18:32:24 2016"
+#> [1] "Wed Jan  6 18:32:59 2016"
 
 test_dir("tests/")
 #> testthat results ========================================================================================================

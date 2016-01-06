@@ -15,8 +15,8 @@ knitr::opts_chunk$set(
 )
 ```
 <div style="padding-bottom:20px">Made with <img src="v8.png"/></div>
-
-`pluralize` : Pluralize and Singularize Any Word
+<br/>
+`pluralize` : Pluralize and Singularize Any (English) Word
 
 Based on the [pluralize.js](https://github.com/blakeembrey/pluralize) javascript library by Blake Embrey.
 
