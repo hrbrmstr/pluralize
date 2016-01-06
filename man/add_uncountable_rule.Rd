@@ -6,6 +6,9 @@
 \usage{
 add_uncountable_rule(uncountable_word)
 }
+\arguments{
+\item{uncountable_word}{the word that's, well, uncountable}
+}
 \description{
 Sometimes you don't want to turn "\code{paper}" into "\code{papers}". You
 can use this function to make a word "uncountable".

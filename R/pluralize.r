@@ -80,8 +80,8 @@ add_plural_rule <- function(singular_word, plural_word) {
 #' Calling \code{plural("irregular")} will return "\code{regular}" if you
 #' define a rule such as \code{add_irregular_rule("irregular", "regular")}.
 #'
-#' @param singular_word desired singular form of a word
-#' @param plural_word plural form of a word
+#' @param irregular_word the irregular form of the word
+#' @param regular_word regular form of a word
 #' @export
 #' @examples
 #' pluralize('test')
@@ -119,6 +119,7 @@ add_irregular_rule <- function(irregular_word, regular_word) {
 #' Sometimes you don't want to turn "\code{paper}" into "\code{papers}". You
 #' can use this function to make a word "uncountable".
 #'
+#' @param uncountable_word the word that's, well, uncountable
 #' @export
 #' @examples
 #' pluralize('test')

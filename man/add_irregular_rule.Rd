@@ -7,9 +7,9 @@
 add_irregular_rule(irregular_word, regular_word)
 }
 \arguments{
-\item{singular_word}{desired singular form of a word}
+\item{irregular_word}{the irregular form of the word}
 
-\item{plural_word}{plural form of a word}
+\item{regular_word}{regular form of a word}
 }
 \description{
 "\code{regular}" is the "deregularized" form of "\code{irregular}".
