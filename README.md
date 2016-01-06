@@ -45,6 +45,54 @@ singularize('test')
     ## [1] "test"
 
 ``` r
+singularize(c("boats", "houses", "cats", "rivers"))
+```
+
+    ## [1] "boat"  "house" "cat"   "river"
+
+``` r
+pluralize(singularize(c("boats", "houses", "cats", "rivers")))
+```
+
+    ## [1] "boats"  "houses" "cats"   "rivers"
+
+``` r
+singularize(c("buses", "wishes", "pitches", "boxexs"))
+```
+
+    ## [1] "bus"   "wish"  "pitch" "boxex"
+
+``` r
+pluralize(singularize(c("buses", "wishes", "pitches", "boxexs")))
+```
+
+    ## [1] "buses"   "wishes"  "pitches" "boxexes"
+
+``` r
+singularize(c("pennies", "spies", "babies", "cities", "daisies"))
+```
+
+    ## [1] "penny" "spy"   "baby"  "city"  "daisy"
+
+``` r
+pluralize(singularize(c("pennies", "spies", "babies", "cities", "daisies")))
+```
+
+    ## [1] "pennies" "spies"   "babies"  "cities"  "daisies"
+
+``` r
+singularize(c("sheep", "fish", "deer", "species", "aircraft"))
+```
+
+    ## [1] "sheep"    "fish"     "deer"     "species"  "aircraft"
+
+``` r
+pluralize(singularize(c("sheep", "fish", "deer", "species", "aircraft")))
+```
+
+    ## [1] "sheep"     "fish"      "deer"      "species"   "aircrafts"
+
+``` r
 pluralize('test', 5)
 ```
 
@@ -89,6 +137,18 @@ pluralize("irregular")
     ## [1] "irregulars"
 
 ``` r
+pluralize(c("woman", "man", "child", "tooth", "foot", "person", "leaf"))
+```
+
+    ## [1] "women"    "men"      "children" "teeth"    "feet"     "people"   "leaves"
+
+``` r
+singularize(c("woman", "man", "child", "tooth", "foot", "person", "leaf"))
+```
+
+    ## [1] "woman"  "man"    "child"  "tooth"  "foot"   "person" "leaf"
+
+``` r
 add_irregular_rule("irregular", "regular")
 pluralize("irregular")
 ```
@@ -117,7 +177,7 @@ library(testthat)
 date()
 ```
 
-    ## [1] "Wed Jan  6 18:16:13 2016"
+    ## [1] "Wed Jan  6 18:22:39 2016"
 
 ``` r
 test_dir("tests/")
