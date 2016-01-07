@@ -1,0 +1,96 @@
+---
+title: "Why 'pluralize'\\?"
+author: "Bob Rudis"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+There are times when one needs to do some lighweight text mining and need to normalize words without the baggage that comes along with dependencies such as `tm` or `OpenNLP`.
+
+One of the steps in this normalization process that is often helpful is to take plural words and make them singular vs "stem" them (which often leaves _interesting_ prefixes that work but aren't exactly "pretty".)
+
+The English language makes this a bit more gnarly at times and there are also cases wheere one might want to bend the rules a bit (i.e. discipline-specific terminology that may not abide by the rules).
+
+While many words can be made plural by just adding an "`s`" there are cases where one has to add "es", "ies" depending on the ending consonant or vowel.
+
+There are further cases, like "`knife`", where there are special rules that force you to do things like make that "`knives`" to get the plural form.
+
+Then, there are _irregular_ plurals like "`fish`" => "`fish`" and "`person`" => "`people`" and others like "`cactus`" => "`cacti`" or "`erratum`" => "`errata`".
+
+However, you may need to override normal behavior. For instance, "`paper`" would normally turn into "`papers`" but you may need it to stay "`paper`".
+
+This package is based on a javascript library that has encoded the core pluralization (and singularization) rules and exposed various functions to aid in maniuplating strings, including the ability to add special case rules (like the "`paper`" example).
+
+Here are some examples to show the functionality:
+
+Basic pluralization
+
+```{r}
+library(pluralize)
+
+(plurals <- pluralize(c("snake", "window", "box", "boy", "lorry",
+                        "potato", "knife")))
+```
+
+and the reverse:
+
+```{r}
+singularize(plurals)
+```
+
+ending "`o`":
+
+```{r}
+(plurals <- pluralize(c("echo", "embargo", "hero", "potato", "tomato",
+                        "torpedo", "veto")))
+
+singularize(plurals)
+```
+
+others ending "`o`":
+
+```{r}
+(plurals <- pluralize(c("auto", "kangaroo", "kilo", "memo", "photo", "piano",
+                        "pimento", "pro", "solo", "soprano", "studio", "tattoo",
+                        "video", "zoo")))
+
+singularize(plurals)
+```
+
+Some special nouns:
+
+```{r}
+(plurals <- pluralize(c("knife", "leaf", "hoof", "life", "self", "elf")))
+
+singularize(plurals)
+```
+
+Some irregular nouns:
+
+```{r}
+(plurals <- pluralize(c("fish", "sheep", "foot", "tooth", "goose",
+                        "child", "man", "woman", "person", "mouse")))
+
+singularize(plurals)
+```
+
+Again, you may want to do something special for certain words:
+
+```{r}
+add_plural_rule("corpus", "corpora")
+add_plural_rule("formula", "formulae")
+add_plural_rule("memoranda", "memorandums")
+
+add_singular_rule("corpora", "corpus")
+add_singular_rule("formulae", "formula")
+add_singular_rule("memorandums", "memoranda")
+
+(plurals <- pluralize(c("corpus", "formula", "memoranda")))
+
+singularize(plurals)
+```
+
+Since this package is based on a javascript library -  [pluralize.js](https://github.com/blakeembrey/pluralize) by Blake Embrey - and uses the V8 pacakge it won't be as lightning fast as a pure C/C++-backed package (it takes ~10 seconds to pluralize/singularize 10,000 words which is kinda horrible but sufficient for this project I'm working on), but it wouldn't take much to translate the rules built into `pluralize.js` over to C++ (which I may do at a later date or convince Oliver to do).
