@@ -1,23 +1,13 @@
-language: c
+language: R
+sudo: false
+cache: packages
+latex: false
+fortran: false
 
-before_install:
-  - curl -OL http://raw.github.com/craigcitro/r-travis/master/scripts/travis-tool.sh
-  - chmod 755 ./travis-tool.sh
-  - ./travis-tool.sh bootstrap
+addons:
+  apt:
+    packages:
+      - libv8-dev
 
-install:
-  - ./travis-tool.sh install_github plyr
-  - ./travis-tool.sh install_deps
-
-script: ./travis-tool.sh run_tests
-
-on_failure:
-  - ./travis-tool.sh dump_logs
-
-branches:
-  except:
-  - /-expt$/
-  notifications:
-    email:
-      on_success: change
-      on_failure: change
+after_success:
+  - Rscript -e 'covr::codecov()'
