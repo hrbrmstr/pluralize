@@ -9,6 +9,7 @@
 #' @param prepend should we prepend the value of \code{n} to the output? Default: \code{FALSE}
 #' @return character vector of modified pluralized words
 #' @export
+#' @rdname pluralize-function
 #' @examples
 #' pluralize('test')
 #' pluralize('test', 5)

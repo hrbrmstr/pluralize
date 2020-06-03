@@ -5,25 +5,25 @@ developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.re
 [![Signed
 by](https://img.shields.io/badge/Keybase-Verified-brightgreen.svg)](https://keybase.io/hrbrmstr)
 ![Signed commit
-%](https://img.shields.io/badge/Signed_Commits-0%25-lightgrey.svg)
+%](https://img.shields.io/badge/Signed_Commits-100%25-lightgrey.svg)
 [![Linux build
 Status](https://travis-ci.org/hrbrmstr/pluralize.svg?branch=master)](https://travis-ci.org/hrbrmstr/pluralize)
 [![Coverage
 Status](https://codecov.io/gh/hrbrmstr/pluralize/branch/master/graph/badge.svg)](https://codecov.io/gh/hrbrmstr/pluralize)
 ![Minimal R
-Version](https://img.shields.io/badge/R%3E%3D-3.6.3-blue.svg)
+Version](https://img.shields.io/badge/R%3E%3D-3.6.0-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 
 # pluralize
 
-Pluralize and Singularize Any (English) Word
+Pluralize and ‘Singularize’ Any (English) Word
 
 ## Description
 
 Tools are provided to create plural, singular and regular forms of
 English words along with tools to augment the built-in rules to fit
-specialzied needs. Core functionality is based on a JavaScript library,
-<https://github.com/blakeembrey/pluralize>, by Blake Embrey.
+specializied needs. Core functionality is based on a JavaScript library,
+<https://github.com/blakeembrey/pluralize>.
 
 ## What’s Inside The Tin
 
@@ -34,6 +34,8 @@ The following functions are implemented:
   - `add_plural_rule`: Add a custom rule for making a word plural
   - `add_singular_rule`: Add a custom rule for making a word singular
   - `add_uncountable_rule`: Make a word “uncountable”
+  - `is_plural`: Test plural state of a word
+  - `pluralize`: Pluralize a word
   - `singularize`: Singularize a word
 
 ## Installation
@@ -135,11 +137,11 @@ pluralize("paper")
 
 ### pluralize Metrics
 
-| Lang | \# Files |  (%) | LoC |  (%) | Blank lines |  (%) | \# Lines |  (%) |
-| :--- | -------: | ---: | --: | ---: | ----------: | ---: | -------: | ---: |
-| HTML |        1 | 0.11 | 157 | 0.63 |          28 | 0.25 |        2 | 0.01 |
-| Rmd  |        2 | 0.22 |  58 | 0.23 |          72 | 0.65 |       71 | 0.44 |
-| R    |        6 | 0.67 |  34 | 0.14 |          11 | 0.10 |       89 | 0.55 |
+| Lang | \# Files | (%) | LoC |  (%) | Blank lines |  (%) | \# Lines |  (%) |
+| :--- | -------: | --: | --: | ---: | ----------: | ---: | -------: | ---: |
+| HTML |        1 | 0.1 | 367 | 0.79 |          33 | 0.28 |        2 | 0.01 |
+| Rmd  |        2 | 0.2 |  58 | 0.12 |          72 | 0.61 |       71 | 0.39 |
+| R    |        7 | 0.7 |  40 | 0.09 |          13 | 0.11 |      108 | 0.60 |
 
 ## Code of Conduct
 

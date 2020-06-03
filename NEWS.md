@@ -7,3 +7,4 @@
 * Updated vignette
 * Broke out the previous monolith pluralize.R into separate files.
 * Removed {purrr} dependency
+* Added "is_*" functions
