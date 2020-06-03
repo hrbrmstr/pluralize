@@ -1,97 +1,105 @@
 ---
-output:
-  html_document:
-    keep_md: true
-  md_document:
-    variant: markdown_github
+output: rmarkdown::github_document
+editor_options: 
+  chunk_output_type: console
 ---
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
-```{r, echo = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "README-"
-)
+```{r pkg-knitr-opts, include=FALSE}
+hrbrpkghelpr::global_opts()
 ```
-<div style="padding-bottom:20px">Made with <img src="v8.png"/></div>
-<br/>
-`pluralize` : Pluralize and Singularize Any (English) Word
 
-Based on the [pluralize.js](https://github.com/blakeembrey/pluralize) javascript library by Blake Embrey.
+```{r badges, results='asis', echo=FALSE, cache=FALSE}
+hrbrpkghelpr::stinking_badges()
+```
 
-Functions to create plural, singular and regular forms of English words along with tools to augment the built-in rules to fit specialzied needs.
+```{r description, results='asis', echo=FALSE, cache=FALSE}
+hrbrpkghelpr::yank_title_and_description()
+```
+
+## What's Inside The Tin
 
 The following functions are implemented:
 
-- `add_irregular_rule` :	Add a custom rule for making "deregularizing" a word
-- `add_plural_rule` :	Add a custom rule for making a word plural
-- `add_singular_rule` :	Add a custom rule for making a word singular
-- `add_uncountable_rule` :	Make a word "uncountable"
-- `pluralize` :	Pluralize and Singularize Any Word
-- `singularize` :	Singularize a word
-
-### News
-
-- Version 0.1.0 released
-
-### Installation
-
-```{r eval=FALSE}
-devtools::install_github("hrbrmstr/pluralize")
+```{r ingredients, results='asis', echo=FALSE, cache=FALSE}
+hrbrpkghelpr::describe_ingredients()
 ```
 
-```{r echo=FALSE, message=FALSE, warning=FALSE, error=FALSE}
-options(width=120)
+## Installation
+
+```{r install-ex, results='asis', echo=FALSE, cache=FALSE}
+hrbrpkghelpr::install_block()
 ```
 
-### Usage
+## Usage
 
-```{r}
+```{r lib-ex}
 library(pluralize)
 
-# current verison
+# current version
 packageVersion("pluralize")
 
+```
+
+```{r ex-01}
 pluralize('test')
+
 singularize('test')
+
 singularize(c("boats", "houses", "cats", "rivers"))
+
 pluralize(singularize(c("boats", "houses", "cats", "rivers")))
+
 singularize(c("buses", "wishes", "pitches", "boxexs"))
+
 pluralize(singularize(c("buses", "wishes", "pitches", "boxexs")))
+
 singularize(c("pennies", "spies", "babies", "cities", "daisies"))
+
 pluralize(singularize(c("pennies", "spies", "babies", "cities", "daisies")))
+
 singularize(c("sheep", "fish", "deer", "species", "aircraft"))
+
 pluralize(singularize(c("sheep", "fish", "deer", "species", "aircraft")))
+
 pluralize('test', 5)
+
 pluralize('test', 5, TRUE)
+
 pluralize('regex')
+
 add_plural_rule("gex", "gexii")
+
 pluralize('regex')
+
 singularize('singles')
+
 add_singular_rule("singles", "singular")
+
 singularize('singles')
+
 pluralize("irregular")
+
 pluralize(c("woman", "man", "child", "tooth", "foot", "person", "leaf"))
+
 singularize(c("woman", "man", "child", "tooth", "foot", "person", "leaf"))
+
 add_irregular_rule("irregular", "regular")
+
 pluralize("irregular")
+
 pluralize("paper")
+
 add_uncountable_rule("paper")
+
 pluralize("paper")
 ```
 
-### Test Results
+### pluralize Metrics
 
-```{r}
-library(pluralize)
-library(testthat)
-
-date()
-
-test_dir("tests/")
+```{r cloc, echo=FALSE}
+cloc::cloc_pkg_md()
 ```
 
-### Code of Conduct
+## Code of Conduct
 
-Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
+Please note that this project is released with a Contributor Code of Conduct. 
+By participating in this project you agree to abide by its terms.

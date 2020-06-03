@@ -1,27 +1,36 @@
 Package: pluralize
 Type: Package
 Title: Pluralize and Singularize Any (English) Word
-Version: 0.1.0
-Date: 2016-01-06
-Authors@R: c(person("Bob", "Rudis", email = "bob@rudis.net", role = c("aut", "cre")),
-             person("Blake", "Embrey", email = "hello@blakeembrey.com", role = c("aut", "ctb"))
+Version: 0.2.0
+Date: 2020-06-03
+Authors@R: c(
+      person(
+        "Bob", "Rudis", email = "bob@rud.is", 
+        role = c("aut", "cre"), 
+        comment = c(ORCID = "0000-0001-5670-2640")
+      ),
+      person(
+        "Blake", "Embrey", email = "hello@blakeembrey.com", 
+         role = c("aut", "ctb"),
+         comment = "pluralize.js <https://github.com/blakeembrey/pluralize>"
+      )
     )
-Maintainer: Bob Rudis <bob@rudis.net>
-Description: Functions to create plural, singular and regular forms of English
-    words along with tools to augment the built-in rules to fit specialzied needs.
-    Core functionality is based on the 'pluralize.js' JavaScript library by
-    Blake Embrey.
-URL: http://github.com/hrbrmstr/pluralize
-BugReports: https://github.com/hrbrmstr/pluralize/issues
+Maintainer: Bob Rudis <bob@rud.is>
+Description: Tools are provided to create plural, singular and regular forms of 
+    English words along with tools to augment the built-in rules to fit 
+    specialzied needs. Core functionality is based on a JavaScript library, 
+    <https://github.com/blakeembrey/pluralize>, by Blake Embrey.
+URL: http://gitlab.com/hrbrmstr/pluralize
+BugReports: https://gitlab.com/hrbrmstr/pluralize/issues
 License: MIT + file LICENSE
+Encoding: UTF-8
 Suggests:
-    testthat,
+    tinytest,
     knitr,
     rmarkdown
 Depends:
-    R (>= 3.0.0)
+    R (>= 3.6.0)
 Imports:
-    V8,
-    purrr
-RoxygenNote: 5.0.1
+    V8
+RoxygenNote: 7.1.0
 VignetteBuilder: knitr

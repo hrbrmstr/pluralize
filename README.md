@@ -1,111 +1,148 @@
-<!-- README.md is generated from README.Rmd. Please edit that file -->
 
+[![Project Status: Active – The project has reached a stable, usable
+state and is being actively
+developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![Signed
+by](https://img.shields.io/badge/Keybase-Verified-brightgreen.svg)](https://keybase.io/hrbrmstr)
+![Signed commit
+%](https://img.shields.io/badge/Signed_Commits-0%25-lightgrey.svg)
+[![Linux build
+Status](https://travis-ci.org/hrbrmstr/pluralize.svg?branch=master)](https://travis-ci.org/hrbrmstr/pluralize)
+[![Coverage
+Status](https://codecov.io/gh/hrbrmstr/pluralize/branch/master/graph/badge.svg)](https://codecov.io/gh/hrbrmstr/pluralize)
+![Minimal R
+Version](https://img.shields.io/badge/R%3E%3D-3.6.3-blue.svg)
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
 
-<div style="padding-bottom:20px">Made with <img src="v8.png"/></div>
-<br/>
-`pluralize` : Pluralize and Singularize Any (English) Word
+# pluralize
 
-Based on the [pluralize.js](https://github.com/blakeembrey/pluralize) javascript library by Blake Embrey.
+Pluralize and Singularize Any (English) Word
 
-Functions to create plural, singular and regular forms of English words along with tools to augment the built-in rules to fit specialzied needs.
+## Description
+
+Tools are provided to create plural, singular and regular forms of
+English words along with tools to augment the built-in rules to fit
+specialzied needs. Core functionality is based on a JavaScript library,
+<https://github.com/blakeembrey/pluralize>, by Blake Embrey.
+
+## What’s Inside The Tin
 
 The following functions are implemented:
 
-- `add_irregular_rule` :	Add a custom rule for making "deregularizing" a word
-- `add_plural_rule` :	Add a custom rule for making a word plural
-- `add_singular_rule` :	Add a custom rule for making a word singular
-- `add_uncountable_rule` :	Make a word "uncountable"
-- `pluralize` :	Pluralize and Singularize Any Word
-- `singularize` :	Singularize a word
+  - `add_irregular_rule`: Add a custom rule for making “deregularizing”
+    a word
+  - `add_plural_rule`: Add a custom rule for making a word plural
+  - `add_singular_rule`: Add a custom rule for making a word singular
+  - `add_uncountable_rule`: Make a word “uncountable”
+  - `singularize`: Singularize a word
 
-### News
+## Installation
 
-- Version 0.1.0 released
-
-### Installation
-
-
-```r
-devtools::install_github("hrbrmstr/pluralize")
+``` r
+remotes::install_gitlab("hrbrmstr/pluralize")
+# or
+remotes::install_github("hrbrmstr/pluralize")
 ```
 
+NOTE: To use the ‘remotes’ install options you will need to have the
+[{remotes} package](https://github.com/r-lib/remotes) installed.
 
+## Usage
 
-### Usage
-
-
-```r
+``` r
 library(pluralize)
 
-# current verison
+# current version
 packageVersion("pluralize")
-#> [1] '1.0'
+## [1] '0.2.0'
+```
 
+``` r
 pluralize('test')
-#> [1] "tests"
+## [1] "tests"
+
 singularize('test')
-#> [1] "test"
+## [1] "test"
+
 singularize(c("boats", "houses", "cats", "rivers"))
-#> [1] "boat"  "house" "cat"   "river"
+## [1] "boat"  "house" "cat"   "river"
+
 pluralize(singularize(c("boats", "houses", "cats", "rivers")))
-#> [1] "boats"  "houses" "cats"   "rivers"
+## [1] "boats"  "houses" "cats"   "rivers"
+
 singularize(c("buses", "wishes", "pitches", "boxexs"))
-#> [1] "bus"   "wish"  "pitch" "boxex"
+## [1] "bus"   "wish"  "pitch" "boxex"
+
 pluralize(singularize(c("buses", "wishes", "pitches", "boxexs")))
-#> [1] "buses"   "wishes"  "pitches" "boxexes"
+## [1] "buses"   "wishes"  "pitches" "boxexes"
+
 singularize(c("pennies", "spies", "babies", "cities", "daisies"))
-#> [1] "penny" "spy"   "baby"  "city"  "daisy"
+## [1] "penny"  "spy"    "baby"   "city"   "daisie"
+
 pluralize(singularize(c("pennies", "spies", "babies", "cities", "daisies")))
-#> [1] "pennies" "spies"   "babies"  "cities"  "daisies"
+## [1] "pennies" "spies"   "babies"  "cities"  "daisies"
+
 singularize(c("sheep", "fish", "deer", "species", "aircraft"))
-#> [1] "sheep"    "fish"     "deer"     "species"  "aircraft"
+## [1] "sheep"    "fish"     "deer"     "specie"   "aircraft"
+
 pluralize(singularize(c("sheep", "fish", "deer", "species", "aircraft")))
-#> [1] "sheep"     "fish"      "deer"      "species"   "aircrafts"
+## [1] "sheep"    "fish"     "deer"     "species"  "aircraft"
+
 pluralize('test', 5)
-#> [1] "tests"
+## [1] "tests"
+
 pluralize('test', 5, TRUE)
-#> [1] "5 tests"
+## [1] "5 tests"
+
 pluralize('regex')
-#> [1] "regexes"
+## [1] "regexes"
+
 add_plural_rule("gex", "gexii")
+
 pluralize('regex')
-#> [1] "regexii"
+## [1] "regexii"
+
 singularize('singles')
-#> [1] "single"
+## [1] "single"
+
 add_singular_rule("singles", "singular")
+
 singularize('singles')
-#> [1] "singular"
+## [1] "singular"
+
 pluralize("irregular")
-#> [1] "irregulars"
+## [1] "irregulars"
+
 pluralize(c("woman", "man", "child", "tooth", "foot", "person", "leaf"))
-#> [1] "women"    "men"      "children" "teeth"    "feet"     "people"   "leaves"
+## [1] "women"    "men"      "children" "teeth"    "feet"     "people"   "leaves"
+
 singularize(c("woman", "man", "child", "tooth", "foot", "person", "leaf"))
-#> [1] "woman"  "man"    "child"  "tooth"  "foot"   "person" "leaf"
+## [1] "woman"  "man"    "child"  "tooth"  "foot"   "person" "leaf"
+
 add_irregular_rule("irregular", "regular")
+
 pluralize("irregular")
-#> [1] "regular"
+## [1] "regular"
+
 pluralize("paper")
-#> [1] "papers"
+## [1] "papers"
+
 add_uncountable_rule("paper")
+
 pluralize("paper")
-#> [1] "paper"
+## [1] "paper"
 ```
 
-### Test Results
+### pluralize Metrics
 
+| Lang | \# Files |  (%) | LoC |  (%) | Blank lines |  (%) | \# Lines |  (%) |
+| :--- | -------: | ---: | --: | ---: | ----------: | ---: | -------: | ---: |
+| HTML |        1 | 0.11 | 157 | 0.63 |          28 | 0.25 |        2 | 0.01 |
+| Rmd  |        2 | 0.22 |  58 | 0.23 |          72 | 0.65 |       71 | 0.44 |
+| R    |        6 | 0.67 |  34 | 0.14 |          11 | 0.10 |       89 | 0.55 |
 
-```r
-library(pluralize)
-library(testthat)
+## Code of Conduct
 
-date()
-#> [1] "Wed Jan  6 18:32:59 2016"
-
-test_dir("tests/")
-#> testthat results ========================================================================================================
-#> OK: 0 SKIPPED: 0 FAILED: 0
-```
-
-### Code of Conduct
-
-Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
+Please note that this project is released with a Contributor Code of
+Conduct. By participating in this project you agree to abide by its
+terms.

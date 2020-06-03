@@ -5,3 +5,7 @@
 ^v8\.png$
 ^README\.html$
 ^CONDUCT\.md$
+^doc$
+^Meta$
+^README\.Rmd$
+^cran-comments\.md$

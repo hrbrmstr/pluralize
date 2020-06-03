@@ -4,15 +4,15 @@ author: "Bob Rudis"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{Why pluralize\\?}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-There are times when one needs to do some lighweight text mining and need to normalize words without the baggage that comes along with dependencies such as `tm` or `OpenNLP`.
+There are times when one needs to do some lightweight text mining and need to normalize words without the baggage that comes along with dependencies such as `tm` or `OpenNLP`.
 
 One of the steps in this normalization process that is often helpful is to take plural words and make them singular vs "stem" them (which often leaves _interesting_ prefixes that work but aren't exactly "pretty".)
 
-The English language makes this a bit more gnarly at times and there are also cases wheere one might want to bend the rules a bit (i.e. discipline-specific terminology that may not abide by the rules).
+The English language makes this a bit more gnarly at times and there are also cases where one might want to bend the rules a bit (i.e. discipline-specific terminology that may not abide by the rules).
 
 While many words can be made plural by just adding an "`s`" there are cases where one has to add "es", "ies" depending on the ending consonant or vowel.
 
@@ -93,4 +93,4 @@ add_singular_rule("memorandums", "memoranda")
 singularize(plurals)
 ```
 
-Since this package is based on a javascript library -  [pluralize.js](https://github.com/blakeembrey/pluralize) by Blake Embrey - and uses the V8 pacakge it won't be as lightning fast as a pure C/C++-backed package (it takes ~10 seconds to pluralize/singularize 10,000 words which is kinda horrible but sufficient for this project I'm working on), but it wouldn't take much to translate the rules built into `pluralize.js` over to C++ (which I may do at a later date or convince Oliver to do).
+Since this package is based on a javascript library -  [pluralize.js](https://github.com/blakeembrey/pluralize) by Blake Embrey - and uses the V8 package it won't be as lightning fast as a pure C/C++-backed package (it takes ~10 seconds to pluralize/singularize 10,000 words which is kinda horrible but sufficient for this project I'm working on), but it wouldn't take much to translate the rules built into `pluralize.js` over to C++.
