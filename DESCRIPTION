@@ -18,7 +18,7 @@ Authors@R: c(
 Maintainer: Bob Rudis <bob@rud.is>
 Description: Tools are provided to create plural, singular and regular forms of 
     English words along with tools to augment the built-in rules to fit 
-    specializied needs. Core functionality is based on a JavaScript library, 
+    specialized needs. Core functionality is based on a JavaScript library, 
     <https://github.com/blakeembrey/pluralize>.
 URL: http://gitlab.com/hrbrmstr/pluralize
 BugReports: https://gitlab.com/hrbrmstr/pluralize/issues
