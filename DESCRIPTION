@@ -1,7 +1,7 @@
 Package: pluralize
 Type: Package
 Title: Pluralize and 'Singularize' Any (English) Word
-Version: 0.2.0
+Version: 0.2.1
 Date: 2020-06-03
 Authors@R: c(
       person(
@@ -32,5 +32,5 @@ Depends:
     R (>= 3.6.0)
 Imports:
     V8
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 VignetteBuilder: knitr
