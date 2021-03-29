@@ -1,3 +1,8 @@
+# pluralize 0.2.1
+
+* Switched out `.onAttach()` for `onLoad()` so that importing to packages
+(either using `@import` or by declaring with `pluralize::`) now works
+
 # pluralize 0.2.0
 
 * Added a `NEWS.md` file to track changes to the package.

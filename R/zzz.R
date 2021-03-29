@@ -1,7 +1,7 @@
 # holding place for things we want to keep around but not visible
 .pkgenv <- new.env(parent=emptyenv())
 
-.onAttach <- function(...) {
+.onLoad <- function(...) {
 
   # read in the suffixes using V8
   ct <- v8()
